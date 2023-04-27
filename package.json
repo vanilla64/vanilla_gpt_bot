@@ -1,0 +1,23 @@
+{
+  "name": "vanilla_gpt_bot",
+  "version": "1.0.0",
+  "main": "app.ts",
+  "repository": "https://github.com/vanilla64/vanilla_gpt_bot.git",
+  "author": "Sergey <vanillaen@yandex.ru>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon ./src/app.ts",
+    "start": "node ./src/app.ts"
+  },
+  "dependencies": {
+    "telegraf": "^4.12.2",
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.2",
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.22",
+    "typescript": "^5.0.4"
+  }
+}
