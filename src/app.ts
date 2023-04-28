@@ -1,2 +1,0 @@
-import { Telegraf } from 'telegraf'
-
