@@ -51,6 +51,7 @@ bot.on(message(LISTENERS.TEXT), async (ctx) => {
 
     sessionMessages.push({ role: OPEN_AI_ROLES.ASSISTANT, content: answerAI })
     await ctx.reply(answerAI)
+
   } catch (e) {
     console.log(e.message)
     ctx.reply(e.status)
