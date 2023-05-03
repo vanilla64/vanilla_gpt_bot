@@ -1,6 +1,7 @@
 import { Telegraf, session } from 'telegraf';
-import { TG_TOKEN } from '../constants/TG_TOKEN.js';
-import config from 'config'
+import * as dotenv from 'dotenv'
 
-export const bot = new Telegraf(config.get('TG_TOKEN'))
+dotenv.config()
+
+export const bot = new Telegraf(process.env.TG_TOKEN)
 export const appSession = session()
