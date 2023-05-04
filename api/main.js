@@ -1,11 +1,11 @@
-import { appSession, bot } from "./components/telegraf.js";
+import { appSession, bot } from "../src/components/telegraf.js";
 import { message } from "telegraf/filters";
-import { oggConverter } from "./components/oggConverter.js";
-import { openai } from "./components/openAI.js";
+import { oggConverter } from "../src/components/oggConverter.js";
+import { openai } from "../src/components/openAI.js";
 import { code } from "telegraf/format";
-import { INITIAL_SESSION }  from "./constants/INITIAL_SESSION.js";
-import { LISTENERS } from "./constants/LISTENERS.js";
-import { OPEN_AI_ROLES } from "./constants/OPEN_AI_ROLES.js";
+import { INITIAL_SESSION }  from "../src/constants/INITIAL_SESSION.js";
+import { LISTENERS } from "../src/constants/LISTENERS.js";
+import { OPEN_AI_ROLES } from "../src/constants/OPEN_AI_ROLES.js";
 
 bot.use(appSession)
 
@@ -33,6 +33,8 @@ bot.command(LISTENERS.NEW, async (ctx) => {
 
 bot.on(message(LISTENERS.TEXT), async (ctx) => {
   ctx.session ??= INITIAL_SESSION
+
+  ctx.reply('hi')
 
   try {
     ctx.reply(code('Запрос обрабатывается...'))
@@ -88,3 +90,5 @@ bot.launch()
 
 process.once('SIGINT', () => bot.stop('SIGINT'))
 process.once('SIGTERM', () => bot.stop('SIGTERM'))
+
+console.log('DONE')
