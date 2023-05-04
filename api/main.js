@@ -32,6 +32,7 @@ bot.command(LISTENERS.NEW, async (ctx) => {
 })
 
 bot.on(message(LISTENERS.TEXT), async (ctx) => {
+  console.log(ctx.session)
   // ctx.session ? ctx.session.messages = [] : ctx.session = INITIAL_SESSION
 
   try {
