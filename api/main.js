@@ -32,9 +32,7 @@ bot.command(LISTENERS.NEW, async (ctx) => {
 })
 
 bot.on(message(LISTENERS.TEXT), async (ctx) => {
-  ctx.session ??= INITIAL_SESSION
-
-  ctx.reply('hi')
+  // ctx.session ? ctx.session.messages = [] : ctx.session = INITIAL_SESSION
 
   try {
     ctx.reply(code('Запрос обрабатывается...'))
